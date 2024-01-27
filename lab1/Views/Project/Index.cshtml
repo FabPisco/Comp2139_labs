@@ -1,0 +1,42 @@
+﻿@using Comp2139_labs.Models
+@model List<Project>
+
+@{
+    //razer
+    ViewData["Title"] = "Projects";
+}
+
+<h2>Projects</h2>
+
+@if (Model.Any())
+{
+    <table class="table">
+
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Name</th>
+                <th>Description</th>
+            </tr>
+        </thead>
+
+        @foreach(var Project in Model)
+        {
+        
+
+        <tbody>
+            <tr>
+                    <td>@Project.ProjectId</td>
+                    <td>@Project.Name</td>
+                    <td>@Project.Description</td>
+            </tr>
+        </tbody>
+}
+    </table>
+
+     
+}
+else
+{
+    <p>No projects available</p>
+}
